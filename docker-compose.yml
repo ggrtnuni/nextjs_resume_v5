@@ -1,0 +1,20 @@
+services:
+  app:
+    build: .
+    volumes:
+      - ./src:/opt/src:cached
+      - node_modules:/opt/src/my-app/node_modules
+    working_dir: "/opt/src"
+    ports:
+      - "3001:3001"
+    tty: true
+    environment:
+      - HOST=0.0.0.0
+      - port=3001
+volumes:
+  node_modules:
+    driver: local
+    driver_opts:
+      type: none
+      device: ./src/my-app/node_modules
+      o: bind
