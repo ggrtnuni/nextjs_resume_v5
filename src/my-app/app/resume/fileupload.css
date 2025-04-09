@@ -1,0 +1,110 @@
+.file-upload-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px dashed #ccc;
+    border-radius: 10px;
+    background-color: #f8f8f8;
+    padding-top: 2mm;
+    padding-bottom: 2mm;
+}
+
+.file-upload-container .file-upload-label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.file-upload-container .file-upload-label.drag-over {
+    background-color: rgba(0, 123, 255, 0.1);
+    border-color: #007bff;
+}
+
+.file-upload-container .file-upload-label:hover {
+    background-color: #e9ecef;
+}
+
+.file-upload-container .file-input {
+    display: none;
+}
+
+.file-upload-container .file-info {
+    /* display: flex; */
+    /* align-items: center; */
+    width: 100%;
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-top: 10px;
+    justify-content: space-between;
+}
+
+.file-upload-container .file-name {
+    margin-right: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    max-width: 200px;
+}
+
+.file-upload-container .browse-button {
+    color: #007bff;
+    text-decoration: underline;
+    cursor: pointer;
+    margin-top: 5px;
+}
+
+.file-upload-container button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    font-size: 1em;
+    width: 200px;
+    margin-top: 2mm;
+}
+
+.file-upload-container button:hover {
+    background-color: #0056b3;
+}
+
+.file-upload-container button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+}
+
+.file-upload-container .clear-button {
+    /* background-color: #dc3545; */
+    background-color: white;
+    color: black;
+    border: none;
+    border: silver solid 1px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 0;
+    width: 200px;
+    margin-top: 2mm;
+}
+
+.file-upload-container .clear-button:hover {
+    /* background-color: #c82333; */
+    background-color: silver;
+}
+
+.file-upload-container .error-message {
+    color: #dc3545;
+    font-size: 0.9em;
+}

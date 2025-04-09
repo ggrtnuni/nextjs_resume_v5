@@ -39,3 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# samples
+/app/redux-sample1
+/app/redux-sample2
+/public/redux-sample2
+

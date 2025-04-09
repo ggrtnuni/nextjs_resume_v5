@@ -1,0 +1,512 @@
+/* * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+} */
+
+body {
+    font-family: "Noto Sans JP", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.resume {
+    width: 210mm;
+}
+
+/* ページ全体 */
+.page {
+    width: 210mm;
+    height: 297mm;
+    border: white solid 1px;
+    /* 囲わないと印刷範囲がおかしくなる (chrome 134.0.6998.88) */
+    /* border: green solid 1px; */
+}
+
+/* コントロールコンテンツ */
+.control {
+    margin-top: 18mm;
+    position: relative;
+}
+
+.control-wide {
+    max-width: 254mm;
+    margin-left: 18mm;
+    margin-right: 18mm;
+}
+
+/* ページコンテンツ */
+.page-content {
+    margin-top: 18mm;
+    margin-left: 18mm;
+    width: 174mm;
+    height: 257mm;
+    position: relative;
+    /* border: green solid 1px; */
+}
+
+/* 証明写真 */
+.resume-photo-img {
+    position: absolute;
+    right: 0;
+    width: 30mm;
+    height: 40mm;
+    /* border: black dashed 1px; */
+}
+
+.resume-photo-img>img {
+    width: 30mm;
+    height: 40mm;
+}
+
+/* タイトル */
+.page-content h1.resume-title {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 138mm;
+    height: 12mm;
+    font-size: 18pt;
+    font-weight: 400;
+    /* border-top: red solid 1px; */
+}
+
+/* 記載日 */
+.page-content div.resume-date {
+    position: absolute;
+    left: 0;
+    top: 12mm;
+    width: 138mm;
+    height: 6mm;
+    font-size: 9pt;
+    font-weight: normal;
+    text-align: right;
+    padding-right: 2mm;
+}
+
+/* カードのレイアウト */
+.page-content .card>h2,
+.page-content .card>div {
+    position: absolute;
+    font-size: 9pt;
+    font-weight: normal;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    padding-left: 2mm;
+    padding-right: 2mm;
+}
+
+.page-content .resume-name-kana>h2 {
+    top: 18mm;
+    left: 0;
+    width: 24mm;
+    height: 6mm;
+    border-top: black solid 2px;
+    border-left: black solid 2px;
+}
+
+.page-content .resume-name-kana>div {
+    left: 24mm;
+    top: 18mm;
+    width: 102mm;
+    height: 6mm;
+    border-top: black solid 2px;
+    text-align: center;
+    border-left: black solid 0px;
+}
+
+.page-content .resume-name>h2 {
+    top: 24mm;
+    left: 0;
+    width: 24mm;
+    height: 12mm;
+    border-left: black solid 2px;
+    border-top: black dashed 1px;
+    letter-spacing: 6mm;
+}
+
+.page-content .resume-name>div {
+    left: 24mm;
+    top: 24mm;
+    width: 102mm;
+    height: 12mm;
+    border-top: black dashed 1px;
+    text-align: center;
+    padding-top: 2mm;
+    font-size: 12pt;
+    border-left: black solid 0px;
+}
+
+.page-content .resume-gender>h2 {
+    left: 126mm;
+    top: 18mm;
+    width: 12mm;
+    height: 6mm;
+    text-align: center;
+    border-left: black solid 1px;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-gender>div {
+    left: 126mm;
+    top: 24mm;
+    width: 12mm;
+    height: 12mm;
+    text-align: center;
+    padding-top: 3mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-birthday>h2 {
+    left: 0;
+    top: 36mm;
+    width: 24mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+}
+
+.page-content .resume-birthday>div {
+    left: 24mm;
+    top: 36mm;
+    width: 114mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-address-kana>h2 {
+    left: 0;
+    top: 42mm;
+    width: 24mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+}
+
+.page-content .resume-address-kana>div {
+    left: 24mm;
+    top: 42mm;
+    width: 114mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-left: black solid 0px;
+    font-size: 8pt;
+    white-space: nowrap;
+}
+
+.page-content .resume-address>h2 {
+    top: 48mm;
+    left: 0;
+    width: 24mm;
+    height: 12mm;
+    border-left: black solid 2px;
+    border-top: black dashed 1px;
+    letter-spacing: 1.2mm;
+}
+
+.page-content .resume-address>div {
+    left: 24mm;
+    top: 48mm;
+    width: 114mm;
+    height: 12mm;
+    border-left: black solid 1px;
+    border-top: black dashed 1px;
+    border-left: black solid 0px;
+}
+
+.page-content .resume-email>h2 {
+    left: 0;
+    top: 60mm;
+    width: 24mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+}
+
+.page-content .resume-email>div {
+    left: 24mm;
+    top: 60mm;
+    width: 114mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+}
+
+.page-content .resume-tel>h2 {
+    left: 138mm;
+    top: 42mm;
+    width: 36mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+    text-align: center;
+}
+
+.page-content .resume-tel>div {
+    left: 138mm;
+    top: 48mm;
+    width: 36mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-mobile>h2 {
+    left: 138mm;
+    top: 54mm;
+    width: 36mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+    text-align: center;
+}
+
+.page-content .resume-mobile>div {
+    left: 138mm;
+    top: 60mm;
+    width: 36mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-contact-address-kana>h2 {
+    left: 0;
+    top: 66mm;
+    width: 24mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+}
+
+.page-content .resume-contact-address-kana>div {
+    left: 24mm;
+    top: 66mm;
+    width: 114mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-left: black solid 0px;
+    font-size: 8pt;
+    white-space: nowrap;
+}
+
+.page-content .resume-contact-address>h2 {
+    left: 0;
+    top: 72mm;
+    width: 24mm;
+    height: 12mm;
+    border-left: black solid 2px;
+    border-top: black dashed 1px;
+    border-bottom: black solid 2px;
+    letter-spacing: 1.2mm;
+}
+
+.page-content .resume-contact-address>div {
+    left: 24mm;
+    top: 72mm;
+    width: 114mm;
+    height: 12mm;
+    border-left: black solid 1px;
+    border-top: black dashed 1px;
+    border-bottom: black solid 2px;
+    border-left: black solid 0px;
+}
+
+.page-content .resume-contact-tel>h2 {
+    left: 138mm;
+    top: 66mm;
+    width: 36mm;
+    height: 6mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+    text-align: center;
+}
+
+.page-content .resume-contact-tel>div {
+    left: 138mm;
+    top: 72mm;
+    width: 36mm;
+    height: 12mm;
+    border-left: black solid 1px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+/* テーブルのレイアウト */
+.page-content .table>.table-header>div,
+.page-content .table>.table-body>.row>div {
+    position: absolute;
+    font-size: 9pt;
+    font-weight: normal;
+    border-left: black solid 1px;
+    padding-left: 2mm;
+    padding-right: 2mm;
+    height: 6mm;
+}
+
+.page-content .table>.table-header>div {
+    border-top: black solid 2px;
+    border-bottom: black solid 1px;
+}
+
+.page-content .table>.table-body>.row>div {
+    border-bottom: black solid 1px;
+}
+
+.page-content .table>.table-body>.row:last-child>div {
+    border-bottom: black solid 2px;
+}
+
+.page-content .table>.table-header>div:first-child {
+    border-left: black solid 2px;
+}
+
+.page-content .table>.table-header>div:last-child {
+    border-right: black solid 2px;
+}
+
+.page-content .table>.table-body>.row>div:first-child {
+    border-left: black solid 2px;
+}
+
+.page-content .table>.table-body>.row>div:last-child {
+    border-right: black solid 2px;
+}
+
+/* テーブル：学歴・職歴 */
+.page-content .resume-history>.table-header>.resume-year,
+.page-content .resume-history>.table-body>.row>.resume-year {
+    left: 0;
+    width: 24mm;
+    text-align: center;
+}
+
+.page-content .resume-history>.table-header>.resume-month,
+.page-content .resume-history>.table-body>.row>.resume-month {
+    left: 24mm;
+    width: 12mm;
+    text-align: center;
+}
+
+.page-content .resume-history>.table-header>.resume-text {
+    left: calc(24mm + 12mm);
+    width: calc(174mm - 36mm);
+    text-align: center;
+}
+
+.page-content .resume-history>.table-body>.row>.resume-text {
+    left: calc(24mm + 12mm);
+    width: calc(174mm - 36mm);
+    text-align: left;
+}
+
+/* テーブル：学歴・職歴 */
+.page-content .resume-license>.table-header>.resume-year,
+.page-content .resume-license>.table-body>.row>.resume-year {
+    left: 0;
+    width: 24mm;
+    text-align: center;
+}
+
+.page-content .resume-license>.table-header>.resume-month,
+.page-content .resume-license>.table-body>.row>.resume-month {
+    left: 24mm;
+    width: 12mm;
+    text-align: center;
+}
+
+.page-content .resume-license>.table-header>.resume-text {
+    left: calc(24mm + 12mm);
+    width: calc(174mm - 36mm);
+    text-align: center;
+}
+
+.page-content .resume-license>.table-body>.row>.resume-text {
+    left: calc(24mm + 12mm);
+    width: calc(174mm - 36mm);
+    text-align: left;
+}
+
+.page-content .resume-license>.table-body>div {
+    border-right: black solid 1px;
+}
+
+.page-content .resume-license>.table-body>.row>div:last-child {
+    border-right: black solid 2px;
+}
+
+/* 志望動機 */
+.page-content .resume-motivation>h2 {
+    left: 0;
+    top: 72mm;
+    width: 174mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-motivation>div {
+    left: 0;
+    top: 78mm;
+    width: 174mm;
+    height: 60mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+/* 本人希望記入欄 */
+.page-content .resume-wish>h2 {
+    left: 0;
+    top: 144mm;
+    width: 174mm;
+    height: 6mm;
+    border-left: black solid 2px;
+    border-top: black solid 2px;
+    border-right: black solid 2px;
+}
+
+.page-content .resume-wish>div {
+    left: 0;
+    top: 150mm;
+    width: 174mm;
+    height: 30mm;
+    border-left: black solid 2px;
+    border-top: black solid 1px;
+    border-right: black solid 2px;
+    border-bottom: black solid 2px;
+}
+
+/* 以下微調整 */
+.pre-like {
+    white-space: pre-wrap;
+    /* 空白と改行を保持し、必要に応じて折り返す */
+    /* font-family: monospace; */
+    /* 等幅フォントを指定 */
+}
+
+.card-without-contact {
+    border-bottom: black solid 2px;
+}
