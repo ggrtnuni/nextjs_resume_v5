@@ -13,7 +13,7 @@ export default function ResumeControlInputCheckbox(props: Props) {
     const label = props.label || '';
     const name = props.name || '';
     const checked = props.checked || false;
-    const onChange = props.onChange || function (checked: boolean) { };
+    const onChange = props.onChange || Function();
 
     return (
         <div className="mb-2">

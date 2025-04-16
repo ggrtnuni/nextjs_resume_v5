@@ -1,6 +1,7 @@
 "use client";
 
-import { useResumeDispatch, useResumeSelector } from '../_hooks/resumeHooks';
+// import { useResumeDispatch  } from '../_hooks/resumeHooks';
+import { useResumeSelector } from '../_hooks/resumeHooks';
 import {
     selectResumeContact,
 } from '../_slices/resumeSlice';
@@ -19,7 +20,7 @@ export default function ResumeCard(props: Props) {
     const contactEffectLabel = props.contactEffectLabel || false;
     const contactEffectValue = props.contactEffectValue || false;
 
-    const dispatch = useResumeDispatch();
+    // const dispatch = useResumeDispatch();
     const resumeState = {
         resumeContact: useResumeSelector(selectResumeContact),
     };

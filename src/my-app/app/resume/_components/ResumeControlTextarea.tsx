@@ -11,7 +11,7 @@ export default function ResumeControlInputText(props: Props) {
     const children = props.children || '';
     const name = props.name || '';
     const value = props.value || '';
-    const onInput = props.onInput || function (value: string) { };
+    const onInput = props.onInput || Function();
 
     const inputClass = 'shadow appearance-none border rounded w-full py-1 px-3 text-xs text-gray-700 leading-tight focus:outline-none forcus:shadow-outline';
 

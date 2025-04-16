@@ -1,6 +1,7 @@
 "use client";
 
-import { useResumeDispatch, useResumeSelector } from '../_hooks/resumeHooks';
+// import { useResumeDispatch } from '../_hooks/resumeHooks';
+import { useResumeSelector } from '../_hooks/resumeHooks';
 import {
     selectResumeHistory,
     selectResumeLicense,
@@ -21,7 +22,7 @@ export default function ResumeTableHistory(props: Props) {
     const step = props.step || 6;
     const unit = props.unit || 'mm';
 
-    const dispatch = useResumeDispatch();
+    // const dispatch = useResumeDispatch();
     const resumeState = {
         resumeHistory: useResumeSelector(selectResumeHistory),
         resumeLicense: useResumeSelector(selectResumeLicense),

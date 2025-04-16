@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useRef } from 'react';
-import { useResumeDispatch, useResumeSelector } from '../_hooks/resumeHooks';
+// import { useResumeDispatch } from '../_hooks/resumeHooks';
+import { useResumeSelector } from '../_hooks/resumeHooks';
 import {
     selectResumeDateText,
     selectResumeNameKana,
@@ -28,7 +29,7 @@ import ResumeCard from './ResumeCard';
 import ResumeTableHistory from './ResumeTableHistory';
 
 export default function Resume() {
-    const dispatch = useResumeDispatch();
+    // const dispatch = useResumeDispatch();
     const resumeState = {
         resumeDateText: useResumeSelector(selectResumeDateText),
         resumeNameKana: useResumeSelector(selectResumeNameKana),

@@ -232,7 +232,7 @@ export default function ResumeControl() {
     /**
      * 読込(JSON)のハンドラ
      */
-    const handleUploadJson = (response: any) => {
+    const handleUploadJson = (response: { data: string }) => {
         // console.log(response.data)
         const jsonData = JSON.parse(response.data);
         // console.log("展開された JSON データ:", Object.keys(jsonData));
@@ -243,7 +243,7 @@ export default function ResumeControl() {
      * 証明写真アップロードのハンドラ
      * @param image 
      */
-    const handleUploadIdPhoto = (response: any) => {
+    const handleUploadIdPhoto = (response: { data: string }) => {
         applyIdPhoto(response.data);
     }
 

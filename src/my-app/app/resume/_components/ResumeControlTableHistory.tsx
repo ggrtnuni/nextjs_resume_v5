@@ -35,10 +35,8 @@ export default function ResumeControlInputText(props: Props) {
 
     // 上流から受け取った name の値によってデータソースを「学歴・職歴」「免許・資格」のどちらかに切り替える。
     let target = resumeState.resumeHistory;
-    let subtitle = '学歴・職歴';
     if (name === 'resumeLicense') {
         target = resumeState.resumeLicense;
-        subtitle = '免許・資格';
     }
 
     /**
@@ -85,7 +83,7 @@ export default function ResumeControlInputText(props: Props) {
     const swapRow = (index1: number, index2: number) => {
         if (index1 >= 0 && index1 < target.rows.length && index2 >= 0 && index2 < target.rows.length) {
             const targetClone = { rows: [...target.rows] } as ResumeHistory;
-            let temp = targetClone.rows.splice(index1, 1, targetClone.rows[index2]);
+            const temp = targetClone.rows.splice(index1, 1, targetClone.rows[index2]);
             targetClone.rows.splice(index2, 1, temp[0]);
             updateResumeHistory(targetClone);
         }

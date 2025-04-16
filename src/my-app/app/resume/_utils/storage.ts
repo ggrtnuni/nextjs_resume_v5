@@ -3,13 +3,13 @@ interface StorageOptions {
     session?: boolean;
 }
 
-/**
- * ローカルストレージに書き込む
- * @param key 
- * @param value 
- * @param options 
- */
-export default {
+const exportedObject = {
+    /**
+     * ローカルストレージに書き込む
+     * @param key 
+     * @param value 
+     * @param options 
+     */
     write: function <T>(key: string, value: T, options: StorageOptions = {}) {
         const prefix = options.prefix || '';
         const session = options.session || false;
@@ -31,6 +31,13 @@ export default {
         }
     },
 
+    /**
+     * ローカルストレージから読み込む
+     * @param key 
+     * @param defaultValue 
+     * @param options 
+     * @returns 
+     */
     read: function <T>(key: string, defaultValue: T, options: StorageOptions = {}): T {
         const prefix = options.prefix || '';
         const session = options.session || false;
@@ -57,3 +64,5 @@ export default {
         return value;
     }
 }
+
+export default exportedObject;

@@ -13,7 +13,7 @@ export default function ResumeControlInputRadio(props: Props) {
     const name = props.name || '';
     const selected = props.selected || '';
     const items = props.items || Array<{ label: string, value: string }>();
-    const onChange = props.onChange || function (value: string) { };
+    const onChange = props.onChange || Function();
 
     const rows = items.map((item, index) => {
         return (

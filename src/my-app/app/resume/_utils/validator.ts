@@ -3,8 +3,7 @@
  * 
  * @author ggrtn
  */
-
-export default {
+const exportedObject = {
     /**
      * yyyy-mm-dd かどうか確認する
      * @param date 
@@ -32,3 +31,5 @@ export default {
         return text && text.length > 0;
     }
 }
+
+export default exportedObject;

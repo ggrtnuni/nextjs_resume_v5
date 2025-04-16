@@ -105,17 +105,19 @@ export function usePersistStore<T>(key: string, initialValue: T, options: UsePer
         }
     };
 
+    /* eslint-disable react-hooks/exhaustive-deps */
     useEffect(() => {
         // Hydration エラーが出ないように、ローカルストレージの値は DOM 描画後に更新する。
         // useEffect の最初の呼び出しの時のみ、ローカルストレージの値を反映するようにする。
         if (isFirst) {
             setStoredValue(initialSorageValue);
             setIsFirst(false);
+        } else {
+            // storedValue を監視して変更があるたびにローカルストレージへの更新を行う。
+            updateStorage();
         }
-
-        // storedValue を監視して変更があるたびにローカルストレージへの更新を行う。
-        updateStorage();
-    }, [storedValue]);
+    }, [storedValue, initialSorageValue, isFirst]);
+    /* eslint-enable react-hooks/exhaustive-deps */
 
     return [storedValue, setStoredValue];
 }

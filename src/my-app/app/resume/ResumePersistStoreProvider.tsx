@@ -139,74 +139,74 @@ export const ResumePersistStoreProvider = ({ children }: Props) => {
             dispatch(setResumeSaveFilename(storage.read('resumeSaveFilename', '', { prefix, session })));
             setIsFirst(false);
         }
-    }, [resumeState.resumeDate]);
+    }, [resumeState.resumeDate, dispatch, isFirst, session]);
 
     useEffect(() => {
         if (!isFirst) { storage.write('resumeDate', resumeState.resumeDate, { prefix, session }); }
-    }, [resumeState.resumeDate]);
+    }, [resumeState.resumeDate, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeNameKana', resumeState.resumeNameKana, { prefix, session }); }
-    }, [resumeState.resumeNameKana]);
+    }, [resumeState.resumeNameKana, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeName', resumeState.resumeName, { prefix, session }); }
-    }, [resumeState.resumeName]);
+    }, [resumeState.resumeName, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeGender', resumeState.resumeGender, { prefix, session }); }
-    }, [resumeState.resumeGender]);
+    }, [resumeState.resumeGender, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeBirthday', resumeState.resumeBirthday, { prefix, session }); }
-    }, [resumeState.resumeBirthday]);
+    }, [resumeState.resumeBirthday, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeAddressKana', resumeState.resumeAddressKana, { prefix, session }); }
-    }, [resumeState.resumeAddressKana]);
+    }, [resumeState.resumeAddressKana, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeAddress', resumeState.resumeAddress, { prefix, session }); }
-    }, [resumeState.resumeAddress]);
+    }, [resumeState.resumeAddress, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeEmail', resumeState.resumeEmail, { prefix, session }); }
-    }, [resumeState.resumeEmail]);
+    }, [resumeState.resumeEmail, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeTel', resumeState.resumeTel, { prefix, session }); }
-    }, [resumeState.resumeTel]);
+    }, [resumeState.resumeTel, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeMobile', resumeState.resumeMobile, { prefix, session }); }
-    }, [resumeState.resumeMobile]);
+    }, [resumeState.resumeMobile, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeContactAddressKana', resumeState.resumeContactAddressKana, { prefix, session }); }
-    }, [resumeState.resumeContactAddressKana]);
+    }, [resumeState.resumeContactAddressKana, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeContactAddress', resumeState.resumeContactAddress, { prefix, session }); }
-    }, [resumeState.resumeContactAddress]);
+    }, [resumeState.resumeContactAddress, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeContactTel', resumeState.resumeContactTel, { prefix, session }); }
-    }, [resumeState.resumeContactTel]);
+    }, [resumeState.resumeContactTel, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeHistory', resumeState.resumeHistory, { prefix, session }); }
-    }, [resumeState.resumeHistory]);
+    }, [resumeState.resumeHistory, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeLicense', resumeState.resumeLicense, { prefix, session }); }
-    }, [resumeState.resumeLicense]);
+    }, [resumeState.resumeLicense, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeMotivation', resumeState.resumeMotivation, { prefix, session }); }
-    }, [resumeState.resumeMotivation]);
+    }, [resumeState.resumeMotivation, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeWish', resumeState.resumeWish, { prefix, session }); }
-    }, [resumeState.resumeWish]);
+    }, [resumeState.resumeWish, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeIdPhoto', resumeState.resumeIdPhoto, { prefix, session }); }
-    }, [resumeState.resumeIdPhoto]);
+    }, [resumeState.resumeIdPhoto, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeCalender', resumeState.resumeCalender, { prefix, session }); }
-    }, [resumeState.resumeCalender]);
+    }, [resumeState.resumeCalender, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeContact', resumeState.resumeContact, { prefix, session }); }
-    }, [resumeState.resumeContact]);
+    }, [resumeState.resumeContact, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeVisibility', resumeState.resumeVisibility, { prefix, session }); }
-    }, [resumeState.resumeVisibility]);
+    }, [resumeState.resumeVisibility, isFirst, session]);
     useEffect(() => {
         if (!isFirst) { storage.write('resumeSaveFilename', resumeState.resumeSaveFilename, { prefix, session }); }
-    }, [resumeState.resumeSaveFilename]);
+    }, [resumeState.resumeSaveFilename, isFirst, session]);
 
     return <>{children}</>;
 };

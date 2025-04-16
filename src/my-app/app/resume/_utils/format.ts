@@ -6,7 +6,7 @@
 
 import validator from './validator';
 
-export default {
+const exportedObject = {
     /**
      * 与えられた日付文字列を yyyy-mm-dd にする
      * @param dateString 
@@ -80,3 +80,5 @@ export default {
         return new Date(currentYear, month, day);
     }
 }
+
+export default exportedObject;

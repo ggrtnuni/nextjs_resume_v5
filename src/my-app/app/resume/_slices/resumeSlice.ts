@@ -3,7 +3,7 @@ import { type ResumeHistory, type ResumeState, type ResumeJson } from '../_types
 import format from '../_utils/format';
 import validator from '../_utils/validator';
 
-export interface ResumeSliceState extends ResumeState { }
+export type ResumeSliceState = ResumeState;
 
 const initialState: ResumeSliceState = {
     resumeDate: '',
@@ -208,7 +208,7 @@ export const resumeSlice = createSlice({
             let result = '';
             if (validator.postalcode(state.resumePostalcode)) {
                 result = '〒 ' + state.resumePostalcode;
-            } state
+            }
             if (validator.string(state.resumeAddress)) {
                 if (result.length > 0) {
                     result += "\n";

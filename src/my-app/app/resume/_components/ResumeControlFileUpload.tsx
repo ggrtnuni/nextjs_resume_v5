@@ -14,9 +14,9 @@ interface Props {
 export default function ResumeControlFileUpload(props: Props) {
     const formId = props.formId || 'file-input';
     const accept = props.accept || '*';
-    const asDataUri = props.asDataUrl || false;
+    const asDataUrl = props.asDataUrl || false;
     const buttonLabel = props.buttonLabel || 'アップロード';
-    const onUpload = props.onUpload || function (result: { data: string }) { }
+    const onUpload = props.onUpload || Function();
 
     const [selectedFile, setSelectFile] = useState<File | null>(null);
     const [isDragOver, setIsDragOver] = useState(false);
@@ -124,7 +124,7 @@ export default function ResumeControlFileUpload(props: Props) {
                 setIsUploading(false);
             }
 
-            if (props.asDataUrl) {
+            if (asDataUrl) {
                 reader.readAsDataURL(file);
             } else {
                 reader.readAsText(file);
@@ -138,7 +138,7 @@ export default function ResumeControlFileUpload(props: Props) {
     return (
         <div className="file-upload-container">
             <label htmlFor={formId} className={`file-upload-label ${isDragOver ? 'drag-over' : ''}`}
-                onDragOver={(event) => { event.preventDefault; handleDragOver(event) }}
+                onDragOver={(event) => { event.preventDefault(); handleDragOver(event) }}
                 onDragEnter={(event) => { event.preventDefault(); handleDragEnter(event) }}
                 onDragLeave={(event) => { event.preventDefault(); handleDragLeave() }}
                 onDrop={(event) => { event.preventDefault(); handleDrop(event) }}>
@@ -156,10 +156,10 @@ export default function ResumeControlFileUpload(props: Props) {
                 {errorMessage}
             </div>
             <div className="button-container">
-                <button onClick={(event) => { handleUpload() }} disabled={!selectedFile || isUploading}>
+                <button onClick={() => { handleUpload() }} disabled={!selectedFile || isUploading}>
                     {buttonLabel}
                 </button>
-                <button onClick={(event) => { clearFile() }} className="clear-button">
+                <button onClick={() => { clearFile() }} className="clear-button">
                     クリア
                 </button>
             </div >
